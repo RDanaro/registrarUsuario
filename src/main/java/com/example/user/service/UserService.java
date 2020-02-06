@@ -11,4 +11,6 @@ import java.util.Date;
 public interface UserService {
 
     public UserResponse createUser (UserRequest user) throws Exception;
+
+    public UserResponse findUserByEmail (String email) throws Exception;
 }

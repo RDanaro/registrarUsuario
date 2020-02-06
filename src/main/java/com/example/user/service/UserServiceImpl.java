@@ -50,6 +50,13 @@ public class UserServiceImpl implements UserService {
         return userResponse;
     }
 
+    @Override
+    public UserResponse findUserByEmail(String email) throws Exception {
+        User userEmail = userRepository.findByEmail(email);
+        UserResponse userResponse = generateResponse(Boolean.FALSE, userEmail);
+        return userResponse;
+    }
+
     private Boolean validateExistingMail(UserRequest user){
         Boolean validateEmail = Boolean.FALSE;
         User userEmail = userRepository.findByEmail(user.getEmail());
